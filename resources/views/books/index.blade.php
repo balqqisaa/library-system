@@ -7,7 +7,10 @@
     <ul>
         @foreach($books as $book)
             <li>
-                <strong><a href="/books/{{ $book['id'] }}">{{ $book['title'] }}</a></strong> - {{ $book['author'] }} ({{ $book['year'] }})
+                <strong><a href="/books/{{ $book->id }}">{{ $book->title }}</a></strong> - 
+                Penulis: {{ $book->author }} | 
+                Tahun: {{ $book->year }} | 
+                Stok: {{ $book->stock }}
             </li>
         @endforeach
     </ul>
