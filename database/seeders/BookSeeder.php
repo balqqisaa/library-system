@@ -10,38 +10,43 @@ class BookSeeder extends Seeder
     public function run(): void
     {
         Book::create([
-            'title' => 'Sang Alkemis (The Alchemist)',
-            'author' => 'Paulo Coelho',
-            'year' => 1988,
-            'stock' => 7,
+            'title'       => 'Sang Alkemis (The Alchemist)',
+            'author'      => 'Paulo Coelho',
+            'year'        => 1988,
+            'stock'       => 7,
+            'category_id' => 1,
         ]);
 
         Book::create([
-            'title' => 'Animal Farm',
-            'author' => 'George Orwell',
-            'year' => 1945,
-            'stock' => 5,
+            'title'       => 'Animal Farm',
+            'author'      => 'George Orwell',
+            'year'        => 1945,
+            'stock'       => 5,
+            'category_id' => 1,
         ]);
 
         Book::create([
-            'title' => 'Laut Bercerita',
-            'author' => 'Leila S. Chudori',
-            'year' => 2017,
-            'stock' => 10,
+            'title'       => 'Laut Bercerita',
+            'author'      => 'Leila S. Chudori',
+            'year'        => 2017,
+            'stock'       => 10,
+            'category_id' => 2,
         ]);
 
         Book::create([
-            'title' => 'Laskar Pelangi',
-            'author' => 'Andrea Hirata',
-            'year' => 2005,
-            'stock' => 8,
+            'title'       => 'Laskar Pelangi',
+            'author'      => 'Andrea Hirata',
+            'year'        => 2005,
+            'stock'       => 8,
+            'category_id' => 2,
         ]);
 
         Book::create([
-            'title' => 'Bumi Manusia',
-            'author' => 'Pramoedya Ananta Toer',
-            'year' => 1980,
-            'stock' => 6,
+            'title'       => 'Bumi Manusia',
+            'author'      => 'Pramoedya Ananta Toer',
+            'year'        => 1980,
+            'stock'       => 6,
+            'category_id' => 2,
         ]);
     }
 }

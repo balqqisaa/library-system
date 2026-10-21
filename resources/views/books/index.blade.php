@@ -14,6 +14,7 @@
             <li>
                 <strong><a href="{{ route('books.show', $book) }}">{{ $book->title }}</a></strong> - 
                 Penulis: {{ $book->author }} | 
+                Kategori: <em>{{ $book->category?->name ?? 'Belum ada kategori' }}</em> | 
                 Tahun: {{ $book->year }} | 
                 Stok: {{ $book->stock }}
                 
