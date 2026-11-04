@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -25,4 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('books', BookController::class);
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::get('/members', [MemberController::class, 'index']);
+
+    Route::middleware('can:manage-users')->group(function () {
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    });
 });
