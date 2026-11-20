@@ -13,10 +13,16 @@ class Book extends Model
         'year',
         'stock',
         'category_id',
+        'cover',
     ];
 
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function borrowingDetails()
+    {
+        return $this->hasMany('App\\Models\\BorrowingDetail');
     }
 }

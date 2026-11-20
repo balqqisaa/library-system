@@ -5,7 +5,7 @@
 @section('content')
     <h2>Tambah Buku Baru</h2>
 
-    <form action="{{ route('books.store') }}" method="POST">
+    <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label>Judul Buku:</label><br>
@@ -50,6 +50,14 @@
             <label>Stok:</label><br>
             <input type="text" name="stock" value="{{ old('stock') }}">
             @error('stock')
+                <p style="color: red; margin-top: 5px;">{{ $message }}</p>
+            @enderror
+        </div>
+        <br>
+        <div>
+            <label>Cover Buku (Opsional, JPG/PNG/WEBP, Maks 2MB):</label><br>
+            <input type="file" name="cover" accept="image/*">
+            @error('cover')
                 <p style="color: red; margin-top: 5px;">{{ $message }}</p>
             @enderror
         </div>
